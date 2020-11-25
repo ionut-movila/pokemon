@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
     list: [],
-    pokemonSelected: null
+    pokemonSelected: null,
+    currentTab: 0
 };
 
 const pokemonReducer = (state = INITIAL_STATE, action) => {
@@ -8,7 +9,9 @@ const pokemonReducer = (state = INITIAL_STATE, action) => {
         case 'LOAD_POKEMONS':
             return {...state, list: action.payload};
         case 'SELECT_POKEMON':
-            return {...state, pokemonSelected: action.payload}
+            return {...state, pokemonSelected: action.payload};
+        case 'CHANGE_TAB':
+            return {...state, currentTab: action.payload};
         default:
             return state;
     }

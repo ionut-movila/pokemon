@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
@@ -140,11 +141,15 @@ const getPokemonIdByUrl = (url) => {
 }
 
 function Card(props) {
+    let history = useHistory();
+    const cardClick = (id) => {
+        history.push(`/details/${id}`);
+    }
     const { color, pokemon } = props;
     const pokemonId = getPokemonIdByUrl(pokemon.url);
     const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`;
     return (
-        <CardContainer color={color}>
+        <CardContainer color={color} onClick={() => cardClick(pokemonId)}>
             <ImageContainer>
                 <CardImage src={imageUrl}></CardImage>
             </ImageContainer>

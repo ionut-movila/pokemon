@@ -7,14 +7,14 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/">
-          <PokeList/>
-        </Route>
         <Route path="/list">
           <PokeList/>
         </Route>
         <Route path="/details/:id">
           <PokeDetails/>
+        </Route>
+        <Route path="/">
+          <PokeList/>
         </Route>
       </Switch>
     </div>
