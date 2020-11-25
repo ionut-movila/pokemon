@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Route, Switch } from 'react-router-dom';
 import PokeList from './views/PokeList';
 import PokeDetails from './views/PokeDetails';
